@@ -1,0 +1,2576 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Appointment | HealthCare Hospital</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* ==============================
+           BASIC
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f4faff;
+            color: #183153;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+            width: 100%;
+            min-height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 12px 5%;
+
+            background: #ffffff;
+
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #087f8c;
+
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .logo i {
+            color: #ef476f;
+            font-size: 30px;
+        }
+
+        .logo span span {
+            color: #4361ee;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #334e68;
+            font-size: 14px;
+            font-weight: 500;
+
+            padding: 8px 4px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00a6c7;
+        }
+
+        .header-button {
+            background: linear-gradient(135deg, #00a6c7, #4361ee);
+
+            color: white;
+
+            padding: 11px 17px;
+
+            border-radius: 25px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .header-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.25);
+        }
+
+        .menu-button {
+            display: none;
+
+            border: none;
+            background: none;
+
+            font-size: 25px;
+            color: #183153;
+
+            cursor: pointer;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 390px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0, 125, 160, 0.88),
+                    rgba(67, 97, 238, 0.88)
+                ),
+                url("https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            top: -80px;
+            left: -60px;
+
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            right: -60px;
+            bottom: -60px;
+
+            animation: float 6s infinite ease-in-out reverse;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 5vw, 60px);
+
+            margin-bottom: 15px;
+
+            animation: slideDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #f2fbff;
+
+            animation: slideUp 1s ease;
+        }
+
+
+        /* ==============================
+           MAIN
+        ============================== */
+
+        .appointment-section {
+            padding: 70px 5%;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .appointment-grid {
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.4fr;
+
+            gap: 30px;
+        }
+
+
+        /* ==============================
+           LEFT CARD
+        ============================== */
+
+        .info-card {
+            background: linear-gradient(
+                145deg,
+                #073b4c,
+                #0077b6
+            );
+
+            color: white;
+
+            border-radius: 25px;
+
+            padding: 35px;
+
+            box-shadow: 0 15px 40px rgba(0, 100, 150, 0.15);
+
+            height: fit-content;
+        }
+
+        .info-card h2 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .info-card > p {
+            color: #d9f6ff;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 28px;
+        }
+
+        .info-item {
+            display: flex;
+
+            gap: 14px;
+
+            margin-bottom: 23px;
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+
+            min-width: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: rgba(255, 255, 255, 0.14);
+
+            color: #90f1ef;
+
+            font-size: 18px;
+        }
+
+        .info-item h4 {
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .info-item p {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #d9f6ff;
+        }
+
+        .emergency {
+            margin-top: 25px;
+
+            padding: 15px;
+
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            display: flex;
+
+            gap: 12px;
+
+            align-items: center;
+        }
+
+        .emergency i {
+            color: #ffccd5;
+            font-size: 24px;
+        }
+
+        .emergency strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .emergency small {
+            color: #d9f6ff;
+        }
+
+
+        /* ==============================
+           FORM CARD
+        ============================== */
+
+        .form-card {
+            background: white;
+
+            padding: 38px;
+
+            border-radius: 25px;
+
+            box-shadow: 0 15px 40px rgba(23, 43, 77, 0.08);
+
+            border: 1px solid #e6eef5;
+        }
+
+        .form-heading span {
+            color: #00a6c7;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .form-heading h2 {
+            margin-top: 7px;
+            margin-bottom: 8px;
+
+            font-size: 28px;
+        }
+
+        .form-heading p {
+            color: #718096;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ==============================
+           FORM
+        ============================== */
+
+        .row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+
+            color: #34495e;
+        }
+
+        label i {
+            color: #00a6c7;
+            margin-right: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            border: 1px solid #dce6ef;
+
+            border-radius: 11px;
+
+            padding: 13px 14px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 13px;
+
+            outline: none;
+
+            background: #fbfdff;
+
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #00a6c7;
+
+            box-shadow:
+                0 0 0 4px rgba(0, 166, 199, 0.09);
+
+            background: white;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        input.error,
+        select.error,
+        textarea.error {
+            border-color: #ef476f;
+        }
+
+        .error-message {
+            display: none;
+
+            color: #ef476f;
+
+            font-size: 11px;
+
+            margin-top: 5px;
+        }
+
+
+        /* ==============================
+           GENDER
+        ============================== */
+
+        .gender-box {
+            display: flex;
+
+            gap: 20px;
+
+            align-items: center;
+
+            min-height: 43px;
+        }
+
+        .gender-box label {
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            font-weight: 400;
+
+            margin: 0;
+
+            cursor: pointer;
+        }
+
+        .gender-box input {
+            width: auto;
+            accent-color: #4361ee;
+        }
+
+
+        /* ==============================
+           TERMS
+        ============================== */
+
+        .terms {
+            display: flex;
+
+            gap: 8px;
+
+            align-items: flex-start;
+
+            margin: 5px 0 18px;
+
+            font-size: 11px;
+
+            color: #718096;
+
+            line-height: 1.5;
+        }
+
+        .terms input {
+            width: auto;
+
+            margin-top: 2px;
+
+            accent-color: #4361ee;
+        }
+
+
+        /* ==============================
+           BUTTON
+        ============================== */
+
+        .submit-button {
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #00a6c7,
+                #4361ee
+            );
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 25px rgba(67, 97, 238, 0.25);
+        }
+
+        .submit-button:active {
+            transform: scale(0.98);
+        }
+
+        .submit-button i {
+            margin-right: 7px;
+        }
+
+
+        /* ==============================
+           SUCCESS POPUP
+        ============================== */
+
+        .popup {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(4, 24, 40, 0.75);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 9999;
+        }
+
+        .popup.show {
+            display: flex;
+        }
+
+        .popup-card {
+            width: 100%;
+
+            max-width: 480px;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            animation: popupAnimation 0.45s ease;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+
+            margin: auto auto 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #dff9ef;
+
+            color: #10b981;
+
+            font-size: 40px;
+
+            animation: pulse 1.4s infinite;
+        }
+
+        .popup-card h2 {
+            font-size: 23px;
+
+            color: #183153;
+
+            margin-bottom: 10px;
+        }
+
+        .popup-card > p {
+            color: #718096;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+        .booking-details {
+            text-align: left;
+
+            background: #f4faff;
+
+            border-radius: 15px;
+
+            padding: 17px;
+
+            margin: 20px 0;
+        }
+
+        .booking-details p {
+            margin: 8px 0;
+
+            color: #526174;
+
+            font-size: 12px;
+        }
+
+        .booking-details strong {
+            color: #183153;
+        }
+
+        .appointment-id {
+            text-align: center !important;
+
+            background: #e6f8ff;
+
+            padding: 9px;
+
+            border-radius: 8px;
+
+            color: #0077b6 !important;
+        }
+
+        .close-popup {
+            border: none;
+
+            background: #4361ee;
+
+            color: white;
+
+            padding: 11px 28px;
+
+            border-radius: 10px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .close-popup:hover {
+            background: #304ccc;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: #062c3a;
+
+            color: #d8f3fa;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            font-size: 12px;
+        }
+
+
+        /* ==============================
+           ANIMATIONS
+        ============================== */
+
+        @keyframes slideDown {
+
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes slideUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(20px);
+            }
+
+        }
+
+        @keyframes popupAnimation {
+
+            from {
+                opacity: 0;
+                transform: scale(0.75) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+        }
+
+
+        /* ==============================
+           TABLET
+        ============================== */
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .header-button {
+                display: none;
+            }
+
+            .appointment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card {
+                order: 2;
+            }
+
+            .form-card {
+                order: 1;
+            }
+
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 13px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .logo i {
+                font-size: 25px;
+            }
+
+            nav {
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 10px 5%;
+
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                padding: 12px 5px;
+
+                border-bottom: 1px solid #edf2f7;
+
+                font-size: 13px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .hero {
+                min-height: 340px;
+            }
+
+            .hero h1 {
+                font-size: 37px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .appointment-section {
+                padding: 45px 5%;
+            }
+
+            .form-card {
+                padding: 25px 18px;
+            }
+
+            .info-card {
+                padding: 28px 20px;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-heading h2 {
+                font-size: 23px;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .gender-box {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         HEADER
+    ============================== -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <span>
+                Health<span>Care</span>
+            </span>
+
+        </a>
+
+
+        <nav id="navbar">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="departments.html">Departments</a>
+
+            <a href="doctors.html">Doctors</a>
+
+            <a href="medicines.html">Medicines</a>
+
+            <a href="laboratory.html">Laboratory</a>
+
+            <a href="reviews.html">Reviews</a>
+
+            <a href="appointment.html" class="active">
+                Appointment
+            </a>
+
+        </nav>
+
+
+        <a href="appointment.html" class="header-button">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Book Appointment
+
+        </a>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ==============================
+         HERO
+    ============================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Book Your Appointment
+            </h1>
+
+            <p>
+                Schedule your visit with our experienced doctors.
+                Choose your department, doctor, date and preferred
+                time to receive personalized healthcare.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         APPOINTMENT SECTION
+    ============================== -->
+
+    <section class="appointment-section">
+
+        <div class="container">
+
+            <div class="appointment-grid">
+
+
+                <!-- ==========================
+                     INFORMATION
+                ========================== -->
+
+                <div class="info-card">
+
+                    <h2>
+                        Why Choose HealthCare?
+                    </h2>
+
+                    <p>
+                        We provide quality medical services with
+                        experienced doctors, modern facilities and
+                        patient-focused care.
+                    </p>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>Experienced Doctors</h4>
+
+                            <p>
+                                Qualified specialists across multiple
+                                healthcare departments.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>Modern Hospital</h4>
+
+                            <p>
+                                Comfortable environment with modern
+                                medical facilities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>Flexible Timing</h4>
+
+                            <p>
+                                Multiple appointment slots are available
+                                throughout the day.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>Patient Safety</h4>
+
+                            <p>
+                                Your comfort, privacy and safety are
+                                important to our healthcare team.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>Easy Appointment</h4>
+
+                            <p>
+                                Book your consultation online in just
+                                a few simple steps.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="emergency">
+
+                        <i class="fa-solid fa-truck-medical"></i>
+
+                        <div>
+
+                            <strong>
+                                Emergency Services
+                            </strong>
+
+                            <small>
+                                Contact your local emergency service
+                                for urgent medical emergencies.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==========================
+                     FORM
+                ========================== -->
+
+                <div class="form-card">
+
+                    <div class="form-heading">
+
+                        <span>
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Online Booking
+                        </span>
+
+                        <h2>
+                            Schedule Your Visit
+                        </h2>
+
+                        <p>
+                            Please enter your details carefully.
+                            All required fields must be completed.
+                        </p>
+
+                    </div>
+
+
+                    <form id="appointmentForm">
+
+
+                        <!-- NAME + PHONE -->
+
+                        <div class="row">
+
+
+                            <div class="form-group">
+
+                                <label for="name">
+
+                                    <i class="fa-solid fa-user"></i>
+
+                                    Full Name *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    placeholder="Enter your full name">
+
+                                <div
+                                    class="error-message"
+                                    id="nameError">
+
+                                    Please enter your name.
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="phone">
+
+                                    <i class="fa-solid fa-phone"></i>
+
+                                    Phone Number *
+
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    maxlength="10"
+                                    placeholder="10-digit mobile number">
+
+                                <div
+                                    class="error-message"
+                                    id="phoneError">
+
+                                    Please enter a valid 10-digit number.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EMAIL + AGE -->
+
+                        <div class="row">
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+
+                                    <i class="fa-solid fa-envelope"></i>
+
+                                    Email *
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="example@gmail.com">
+
+                                <div
+                                    class="error-message"
+                                    id="emailError">
+
+                                    Please enter a valid email.
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="age">
+
+                                    <i class="fa-solid fa-cake-candles"></i>
+
+                                    Age *
+
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="age"
+                                    min="1"
+                                    max="120"
+                                    placeholder="Your age">
+
+                                <div
+                                    class="error-message"
+                                    id="ageError">
+
+                                    Please enter age between 1 and 120.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- GENDER + DEPARTMENT -->
+
+                        <div class="row">
+
+
+                            <div class="form-group">
+
+                                <label>
+
+                                    <i class="fa-solid fa-venus-mars"></i>
+
+                                    Gender *
+
+                                </label>
+
+                                <div class="gender-box">
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="gender"
+                                            value="Male">
+                                        Male
+                                    </label>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="gender"
+                                            value="Female">
+                                        Female
+                                    </label>
+
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="gender"
+                                            value="Other">
+                                        Other
+                                    </label>
+
+                                </div>
+
+                                <div
+                                    class="error-message"
+                                    id="genderError">
+
+                                    Please select gender.
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="department">
+
+                                    <i class="fa-solid fa-hospital-user"></i>
+
+                                    Department *
+
+                                </label>
+
+                                <select id="department">
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+                                    <option value="Cardiology">
+                                        Cardiology
+                                    </option>
+
+                                    <option value="Neurology">
+                                        Neurology
+                                    </option>
+
+                                    <option value="Orthopedics">
+                                        Orthopedics
+                                    </option>
+
+                                    <option value="Pediatrics">
+                                        Pediatrics
+                                    </option>
+
+                                    <option value="Dermatology">
+                                        Dermatology
+                                    </option>
+
+                                    <option value="General Medicine">
+                                        General Medicine
+                                    </option>
+
+                                    <option value="Gynecology">
+                                        Gynecology
+                                    </option>
+
+                                    <option value="ENT">
+                                        ENT
+                                    </option>
+
+                                    <option value="Dentistry">
+                                        Dentistry
+                                    </option>
+
+                                </select>
+
+                                <div
+                                    class="error-message"
+                                    id="departmentError">
+
+                                    Please select department.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DOCTOR -->
+
+                        <div class="form-group">
+
+                            <label for="doctor">
+
+                                <i class="fa-solid fa-user-doctor"></i>
+
+                                Select Doctor *
+
+                            </label>
+
+                            <select id="doctor">
+
+                                <option value="">
+                                    Select department first
+                                </option>
+
+                            </select>
+
+                            <div
+                                class="error-message"
+                                id="doctorError">
+
+                                Please select a doctor.
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DATE + TIME -->
+
+                        <div class="row">
+
+
+                            <div class="form-group">
+
+                                <label for="date">
+
+                                    <i class="fa-solid fa-calendar"></i>
+
+                                    Appointment Date *
+
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="date">
+
+                                <div
+                                    class="error-message"
+                                    id="dateError">
+
+                                    Please select a valid date.
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="time">
+
+                                    <i class="fa-solid fa-clock"></i>
+
+                                    Appointment Time *
+
+                                </label>
+
+                                <select id="time">
+
+                                    <option value="">
+                                        Select Time
+                                    </option>
+
+                                    <option value="09:00 AM">
+                                        09:00 AM
+                                    </option>
+
+                                    <option value="10:00 AM">
+                                        10:00 AM
+                                    </option>
+
+                                    <option value="11:00 AM">
+                                        11:00 AM
+                                    </option>
+
+                                    <option value="12:00 PM">
+                                        12:00 PM
+                                    </option>
+
+                                    <option value="02:00 PM">
+                                        02:00 PM
+                                    </option>
+
+                                    <option value="03:00 PM">
+                                        03:00 PM
+                                    </option>
+
+                                    <option value="04:00 PM">
+                                        04:00 PM
+                                    </option>
+
+                                    <option value="05:00 PM">
+                                        05:00 PM
+                                    </option>
+
+                                    <option value="06:00 PM">
+                                        06:00 PM
+                                    </option>
+
+                                </select>
+
+                                <div
+                                    class="error-message"
+                                    id="timeError">
+
+                                    Please select time.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- REASON -->
+
+                        <div class="form-group">
+
+                            <label for="reason">
+
+                                <i class="fa-solid fa-notes-medical"></i>
+
+                                Reason for Visit *
+
+                            </label>
+
+                            <textarea
+                                id="reason"
+                                placeholder="Describe your problem or reason for consultation..."></textarea>
+
+                            <div
+                                class="error-message"
+                                id="reasonError">
+
+                                Please enter reason for visit.
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- TERMS -->
+
+                        <label class="terms">
+
+                            <input
+                                type="checkbox"
+                                id="terms">
+
+                            <span>
+                                I confirm that the information entered
+                                above is correct and I agree to be
+                                contacted about my appointment.
+                            </span>
+
+                        </label>
+
+                        <div
+                            class="error-message"
+                            id="termsError">
+
+                            Please confirm the information.
+
+                        </div>
+
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="submit-button">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                            Book Appointment
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         SUCCESS POPUP
+    ============================== -->
+
+    <div
+        class="popup"
+        id="successPopup">
+
+        <div class="popup-card">
+
+            <div class="success-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+
+            <h2>
+                Appointment Booked Successfully!
+            </h2>
+
+
+            <p>
+                Your appointment request has been successfully
+                submitted to HealthCare Hospital.
+            </p>
+
+
+            <div class="booking-details">
+
+                <p class="appointment-id">
+
+                    <strong>
+                        Appointment ID:
+                    </strong>
+
+                    <span id="bookingId"></span>
+
+                </p>
+
+
+                <p>
+                    <strong>Patient:</strong>
+                    <span id="bookingName"></span>
+                </p>
+
+
+                <p>
+                    <strong>Department:</strong>
+                    <span id="bookingDepartment"></span>
+                </p>
+
+
+                <p>
+                    <strong>Doctor:</strong>
+                    <span id="bookingDoctor"></span>
+                </p>
+
+
+                <p>
+                    <strong>Date:</strong>
+                    <span id="bookingDate"></span>
+                </p>
+
+
+                <p>
+                    <strong>Time:</strong>
+                    <span id="bookingTime"></span>
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-popup"
+                id="closePopup">
+
+                <i class="fa-solid fa-check"></i>
+
+                Done
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <p>
+            © 2026 HealthCare Hospital.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        /* =================================
+           MOBILE MENU
+        ================================= */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navbar =
+            document.getElementById("navbar");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navbar.classList.toggle("show");
+
+            }
+        );
+
+
+
+        /* =================================
+           DOCTOR DATA
+        ================================= */
+
+        const doctorData = {
+
+            "Cardiology": [
+                "Dr. Aarav Mehta",
+                "Dr. Sara Khan"
+            ],
+
+            "Neurology": [
+                "Dr. Rohan Shah",
+                "Dr. Aisha Patel"
+            ],
+
+            "Orthopedics": [
+                "Dr. Vikram Desai",
+                "Dr. Meera Joshi"
+            ],
+
+            "Pediatrics": [
+                "Dr. Anaya Shah",
+                "Dr. Kabir Patel"
+            ],
+
+            "Dermatology": [
+                "Dr. Nisha Mehta",
+                "Dr. Zoya Khan"
+            ],
+
+            "General Medicine": [
+                "Dr. Rahul Desai",
+                "Dr. Priya Shah"
+            ],
+
+            "Gynecology": [
+                "Dr. Isha Patel",
+                "Dr. Riya Mehta"
+            ],
+
+            "ENT": [
+                "Dr. Karan Shah",
+                "Dr. Sana Patel"
+            ],
+
+            "Dentistry": [
+                "Dr. Neel Mehta",
+                "Dr. Hina Shah"
+            ]
+
+        };
+
+
+        /* =================================
+           DEPARTMENT SELECT
+        ================================= */
+
+        const department =
+            document.getElementById("department");
+
+        const doctor =
+            document.getElementById("doctor");
+
+
+        department.addEventListener(
+            "change",
+            function () {
+
+                const selected =
+                    department.value;
+
+
+                doctor.innerHTML =
+                    '<option value="">Select Doctor</option>';
+
+
+                if (selected === "") {
+
+                    return;
+
+                }
+
+
+                doctorData[selected].forEach(
+                    function (doctorName) {
+
+                        const option =
+                            document.createElement("option");
+
+                        option.value =
+                            doctorName;
+
+                        option.textContent =
+                            doctorName;
+
+                        doctor.appendChild(option);
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =================================
+           DATE MINIMUM = TODAY
+        ================================= */
+
+        const dateInput =
+            document.getElementById("date");
+
+
+        const today =
+            new Date();
+
+
+        const year =
+            today.getFullYear();
+
+        const month =
+            String(today.getMonth() + 1)
+                .padStart(2, "0");
+
+        const day =
+            String(today.getDate())
+                .padStart(2, "0");
+
+
+        const todayValue =
+            year + "-" + month + "-" + day;
+
+
+        dateInput.min = todayValue;
+
+
+
+        /* =================================
+           FORM ELEMENTS
+        ================================= */
+
+        const form =
+            document.getElementById("appointmentForm");
+
+        const popup =
+            document.getElementById("successPopup");
+
+        const closePopup =
+            document.getElementById("closePopup");
+
+
+
+        /* =================================
+           VALIDATION FUNCTIONS
+        ================================= */
+
+        function showError(
+            inputId,
+            errorId
+        ) {
+
+            const input =
+                document.getElementById(inputId);
+
+            const error =
+                document.getElementById(errorId);
+
+
+            if (input) {
+                input.classList.add("error");
+            }
+
+            if (error) {
+                error.style.display = "block";
+            }
+
+        }
+
+
+        function hideError(
+            inputId,
+            errorId
+        ) {
+
+            const input =
+                document.getElementById(inputId);
+
+            const error =
+                document.getElementById(errorId);
+
+
+            if (input) {
+                input.classList.remove("error");
+            }
+
+            if (error) {
+                error.style.display = "none";
+            }
+
+        }
+
+
+
+        /* =================================
+           FORM SUBMIT
+        ================================= */
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                let valid = true;
+
+
+
+                /* NAME */
+
+                const name =
+                    document
+                        .getElementById("name")
+                        .value
+                        .trim();
+
+
+                if (name.length < 2) {
+
+                    showError(
+                        "name",
+                        "nameError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "name",
+                        "nameError"
+                    );
+
+                }
+
+
+
+                /* PHONE */
+
+                const phone =
+                    document
+                        .getElementById("phone")
+                        .value
+                        .trim();
+
+
+                const phonePattern =
+                    /^[6-9][0-9]{9}$/;
+
+
+                if (!phonePattern.test(phone)) {
+
+                    showError(
+                        "phone",
+                        "phoneError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "phone",
+                        "phoneError"
+                    );
+
+                }
+
+
+
+                /* EMAIL */
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (!emailPattern.test(email)) {
+
+                    showError(
+                        "email",
+                        "emailError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "email",
+                        "emailError"
+                    );
+
+                }
+
+
+
+                /* AGE */
+
+                const age =
+                    Number(
+                        document
+                            .getElementById("age")
+                            .value
+                    );
+
+
+                if (
+                    age < 1 ||
+                    age > 120 ||
+                    !age
+                ) {
+
+                    showError(
+                        "age",
+                        "ageError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "age",
+                        "ageError"
+                    );
+
+                }
+
+
+
+                /* GENDER */
+
+                const gender =
+                    document.querySelector(
+                        'input[name="gender"]:checked'
+                    );
+
+
+                const genderError =
+                    document.getElementById(
+                        "genderError"
+                    );
+
+
+                if (!gender) {
+
+                    genderError.style.display =
+                        "block";
+
+                    valid = false;
+
+                } else {
+
+                    genderError.style.display =
+                        "none";
+
+                }
+
+
+
+                /* DEPARTMENT */
+
+                if (department.value === "") {
+
+                    showError(
+                        "department",
+                        "departmentError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "department",
+                        "departmentError"
+                    );
+
+                }
+
+
+
+                /* DOCTOR */
+
+                if (doctor.value === "") {
+
+                    showError(
+                        "doctor",
+                        "doctorError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "doctor",
+                        "doctorError"
+                    );
+
+                }
+
+
+
+                /* DATE */
+
+                if (
+                    dateInput.value === "" ||
+                    dateInput.value < todayValue
+                ) {
+
+                    showError(
+                        "date",
+                        "dateError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "date",
+                        "dateError"
+                    );
+
+                }
+
+
+
+                /* TIME */
+
+                const time =
+                    document.getElementById("time");
+
+
+                if (time.value === "") {
+
+                    showError(
+                        "time",
+                        "timeError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "time",
+                        "timeError"
+                    );
+
+                }
+
+
+
+                /* REASON */
+
+                const reason =
+                    document
+                        .getElementById("reason")
+                        .value
+                        .trim();
+
+
+                if (reason.length < 5) {
+
+                    showError(
+                        "reason",
+                        "reasonError"
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    hideError(
+                        "reason",
+                        "reasonError"
+                    );
+
+                }
+
+
+
+                /* TERMS */
+
+                const terms =
+                    document.getElementById("terms");
+
+                const termsError =
+                    document.getElementById(
+                        "termsError"
+                    );
+
+
+                if (!terms.checked) {
+
+                    termsError.style.display =
+                        "block";
+
+                    valid = false;
+
+                } else {
+
+                    termsError.style.display =
+                        "none";
+
+                }
+
+
+
+                /* =================================
+                   STOP IF INVALID
+                ================================= */
+
+                if (!valid) {
+
+                    return;
+
+                }
+
+
+
+                /* =================================
+                   CREATE APPOINTMENT ID
+                ================================= */
+
+                const appointmentId =
+                    "HC-" +
+                    Math.floor(
+                        100000 +
+                        Math.random() * 900000
+                    );
+
+
+
+                /* =================================
+                   FORMAT DATE
+                ================================= */
+
+                const dateObject =
+                    new Date(
+                        dateInput.value + "T00:00:00"
+                    );
+
+
+                const formattedDate =
+                    dateObject.toLocaleDateString(
+                        "en-IN",
+                        {
+                            day: "2-digit",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    );
+
+
+
+                /* =================================
+                   PUT DATA INTO POPUP
+                ================================= */
+
+                document.getElementById(
+                    "bookingId"
+                ).textContent =
+                    appointmentId;
+
+
+                document.getElementById(
+                    "bookingName"
+                ).textContent =
+                    name;
+
+
+                document.getElementById(
+                    "bookingDepartment"
+                ).textContent =
+                    department.value;
+
+
+                document.getElementById(
+                    "bookingDoctor"
+                ).textContent =
+                    doctor.value;
+
+
+                document.getElementById(
+                    "bookingDate"
+                ).textContent =
+                    formattedDate;
+
+
+                document.getElementById(
+                    "bookingTime"
+                ).textContent =
+                    time.value;
+
+
+
+                /* =================================
+                   SAVE APPOINTMENT IN BROWSER
+                ================================= */
+
+                const appointment = {
+
+                    id: appointmentId,
+
+                    name: name,
+
+                    phone: phone,
+
+                    email: email,
+
+                    age: age,
+
+                    gender: gender.value,
+
+                    department:
+                        department.value,
+
+                    doctor:
+                        doctor.value,
+
+                    date:
+                        dateInput.value,
+
+                    time:
+                        time.value,
+
+                    reason:
+                        reason
+
+                };
+
+
+                localStorage.setItem(
+                    "healthCareAppointment",
+                    JSON.stringify(appointment)
+                );
+
+
+
+                /* =================================
+                   SHOW SUCCESS POPUP
+                ================================= */
+
+                popup.classList.add("show");
+
+            }
+        );
+
+
+
+        /* =================================
+           CLOSE POPUP
+        ================================= */
+
+        closePopup.addEventListener(
+            "click",
+            function () {
+
+                popup.classList.remove("show");
+
+                form.reset();
+
+                doctor.innerHTML =
+                    '<option value="">Select department first</option>';
+
+            }
+        );
+
+
+        /* Close popup when clicking outside */
+
+        popup.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === popup) {
+
+                    popup.classList.remove("show");
+
+                }
+
+            }
+        );
+
+
+        /* ESC key */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    popup.classList.remove("show");
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

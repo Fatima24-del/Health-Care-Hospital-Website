@@ -1,0 +1,2058 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Reviews | HealthCare Hospital</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f5fbff;
+            color: #183153;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER / NAVBAR
+        ========================= */
+
+        header {
+            width: 100%;
+            min-height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 12px 5%;
+
+            background: #ffffff;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #087f8c;
+
+            font-size: 24px;
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+        .logo i {
+            color: #ef476f;
+            font-size: 30px;
+        }
+
+        .logo span span {
+            color: #4361ee;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+        }
+
+        nav a {
+            color: #334e68;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            padding: 8px 3px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00a6c7;
+        }
+
+        .appointment-btn {
+            padding: 10px 16px;
+
+            border-radius: 25px;
+
+            background: linear-gradient(
+                135deg,
+                #00a6c7,
+                #4361ee
+            );
+
+            color: #ffffff;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .appointment-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(67, 97, 238, 0.25);
+        }
+
+        .menu-btn {
+            display: none;
+
+            background: transparent;
+            border: none;
+
+            color: #183153;
+
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 380px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0, 125, 160, 0.88),
+                    rgba(67, 97, 238, 0.88)
+                ),
+                url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.09);
+
+            position: absolute;
+
+            top: -80px;
+            left: -60px;
+
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: "";
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            position: absolute;
+
+            right: -60px;
+            bottom: -60px;
+
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(35px, 5vw, 58px);
+
+            margin-bottom: 15px;
+
+            animation: slideDown 0.8s ease;
+        }
+
+        .hero-content p {
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            color: #f0fbff;
+
+            animation: slideUp 1s ease;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        .section {
+            padding: 70px 5%;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #00a6c7;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+
+            margin: 8px 0;
+        }
+
+        .section-title p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #718096;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           RATING SUMMARY
+        ========================= */
+
+        .rating-summary {
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 25px;
+
+            margin-bottom: 45px;
+        }
+
+        .overall-rating {
+            background: linear-gradient(
+                145deg,
+                #073b4c,
+                #0077b6
+            );
+
+            color: white;
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 35px rgba(0, 100, 150, 0.15);
+        }
+
+        .overall-rating h3 {
+            font-size: 50px;
+
+            margin-bottom: 5px;
+        }
+
+        .stars {
+            color: #ffd166;
+
+            font-size: 20px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 8px;
+        }
+
+        .overall-rating p {
+            font-size: 12px;
+            color: #d8f5ff;
+        }
+
+        .rating-bars {
+            background: white;
+
+            border-radius: 22px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 10px 30px rgba(23, 43, 77, 0.07);
+        }
+
+        .rating-row {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin: 10px 0;
+        }
+
+        .rating-row span {
+            width: 35px;
+
+            font-size: 12px;
+
+            color: #526174;
+        }
+
+        .bar {
+            flex: 1;
+
+            height: 8px;
+
+            border-radius: 10px;
+
+            background: #e9f1f7;
+
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                90deg,
+                #00a6c7,
+                #4361ee
+            );
+        }
+
+        .percent {
+            width: 40px;
+
+            text-align: right;
+
+            font-size: 11px;
+
+            color: #718096;
+        }
+
+
+        /* =========================
+           REVIEW CARDS
+        ========================= */
+
+        .reviews-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .review-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            border: 1px solid #e6eef5;
+
+            box-shadow:
+                0 10px 30px rgba(23, 43, 77, 0.06);
+
+            transition: 0.35s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .review-card::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background: linear-gradient(
+                90deg,
+                #00a6c7,
+                #4361ee,
+                #ef476f
+            );
+        }
+
+        .review-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 18px 35px rgba(23, 43, 77, 0.11);
+        }
+
+        .patient {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 15px;
+        }
+
+        .patient-img {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 3px solid #e5f7fb;
+        }
+
+        .patient-info h4 {
+            font-size: 14px;
+        }
+
+        .patient-info small {
+            color: #718096;
+
+            font-size: 10px;
+        }
+
+        .review-stars {
+            color: #ffc107;
+
+            font-size: 14px;
+
+            margin-bottom: 12px;
+        }
+
+        .review-card p {
+            color: #66788a;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+        .quote-icon {
+            position: absolute;
+
+            right: 20px;
+            top: 25px;
+
+            font-size: 24px;
+
+            color: #e2f4f8;
+        }
+
+
+        /* =========================
+           REVIEW FORM
+        ========================= */
+
+        .review-form-section {
+            background: #eef9fc;
+        }
+
+        .review-form-box {
+            max-width: 800px;
+
+            margin: auto;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 15px 40px rgba(23, 43, 77, 0.08);
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #34495e;
+
+            margin-bottom: 7px;
+        }
+
+        label i {
+            color: #00a6c7;
+
+            margin-right: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            border: 1px solid #dce6ef;
+
+            border-radius: 11px;
+
+            padding: 13px;
+
+            outline: none;
+
+            background: #fbfdff;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #00a6c7;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px rgba(0, 166, 199, 0.08);
+        }
+
+        textarea {
+            height: 120px;
+
+            resize: vertical;
+        }
+
+
+        /* =========================
+           STAR SELECTOR
+        ========================= */
+
+        .star-selector {
+            display: flex;
+
+            flex-direction: row-reverse;
+
+            justify-content: flex-end;
+
+            gap: 7px;
+        }
+
+        .star-selector input {
+            display: none;
+        }
+
+        .star-selector label {
+            font-size: 30px;
+
+            color: #d7e0e8;
+
+            cursor: pointer;
+
+            margin: 0;
+
+            transition: 0.2s;
+        }
+
+        .star-selector label:hover,
+        .star-selector label:hover ~ label,
+        .star-selector input:checked ~ label {
+            color: #ffc107;
+
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================= */
+
+        .submit-review {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #00a6c7,
+                #4361ee
+            );
+
+            font-family: "Poppins", sans-serif;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-review:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 25px rgba(67, 97, 238, 0.25);
+        }
+
+
+        /* =========================
+           SUCCESS POPUP
+        ========================= */
+
+        .popup {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(4, 24, 40, 0.75);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 9999;
+        }
+
+        .popup.show {
+            display: flex;
+        }
+
+        .popup-card {
+            width: 100%;
+
+            max-width: 430px;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            animation: popupAnimation 0.4s ease;
+        }
+
+        .success-icon {
+            width: 75px;
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin: auto auto 17px;
+
+            border-radius: 50%;
+
+            background: #dff9ef;
+
+            color: #10b981;
+
+            font-size: 38px;
+
+            animation: pulse 1.4s infinite;
+        }
+
+        .popup-card h2 {
+            font-size: 23px;
+
+            margin-bottom: 10px;
+        }
+
+        .popup-card p {
+            color: #718096;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+        .close-popup {
+            border: none;
+
+            background: #4361ee;
+
+            color: white;
+
+            padding: 11px 30px;
+
+            border-radius: 10px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+        .close-popup:hover {
+            background: #304ccc;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #062c3a;
+
+            color: #d8f3fa;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(20px);
+            }
+        }
+
+        @keyframes popupAnimation {
+            from {
+                opacity: 0;
+                transform: scale(0.75);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1050px) {
+
+            nav {
+                gap: 9px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .appointment-btn {
+                display: none;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 13px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .logo i {
+                font-size: 25px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 8px 5%;
+
+                box-shadow:
+                    0 10px 25px rgba(0, 0, 0, 0.08);
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                padding: 12px 4px;
+
+                border-bottom: 1px solid #edf2f7;
+
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 330px;
+            }
+
+            .hero-content h1 {
+                font-size: 37px;
+            }
+
+            .hero-content p {
+                font-size: 13px;
+            }
+
+            .section {
+                padding: 50px 5%;
+            }
+
+            .rating-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+
+                gap: 0;
+            }
+
+            .review-form-box {
+                padding: 25px 18px;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .hero-content h1 {
+                font-size: 31px;
+            }
+
+            .star-selector label {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <span>
+                Health<span>Care</span>
+            </span>
+
+        </a>
+
+
+        <nav id="navbar">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+            <a href="doctors.html">
+                Doctors
+            </a>
+
+            <a href="medicines.html">
+                Medicines
+            </a>
+
+            <a href="laboratory.html">
+                Laboratory
+            </a>
+
+            <a href="reviews.html" class="active">
+                Reviews
+            </a>
+
+            <a href="appointment.html">
+                Appointment
+            </a>
+
+        </nav>
+
+
+        <a
+            href="appointment.html"
+            class="appointment-btn">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Book Appointment
+
+        </a>
+
+
+        <button
+            class="menu-btn"
+            id="menuButton"
+            aria-label="Open Menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Patient Reviews
+            </h1>
+
+            <p>
+                Read what our patients say about their
+                experience with HealthCare Hospital and
+                share your own experience with us.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         REVIEWS
+    ========================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Patient Feedback
+                </span>
+
+                <h2>
+                    What Our Patients Say
+                </h2>
+
+                <p>
+                    Your feedback helps us improve our services
+                    and provide better patient-focused healthcare.
+                </p>
+
+            </div>
+
+
+
+            <!-- RATING SUMMARY -->
+
+            <div class="rating-summary">
+
+
+                <div class="overall-rating">
+
+                    <h3>
+                        4.8
+                    </h3>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        Based on 1,250+ patient reviews
+                    </p>
+
+                </div>
+
+
+                <div class="rating-bars">
+
+                    <div class="rating-row">
+
+                        <span>5 ★</span>
+
+                        <div class="bar">
+                            <div
+                                class="bar-fill"
+                                style="width: 92%;">
+                            </div>
+                        </div>
+
+                        <span class="percent">
+                            92%
+                        </span>
+
+                    </div>
+
+
+                    <div class="rating-row">
+
+                        <span>4 ★</span>
+
+                        <div class="bar">
+                            <div
+                                class="bar-fill"
+                                style="width: 6%;">
+                            </div>
+                        </div>
+
+                        <span class="percent">
+                            6%
+                        </span>
+
+                    </div>
+
+
+                    <div class="rating-row">
+
+                        <span>3 ★</span>
+
+                        <div class="bar">
+                            <div
+                                class="bar-fill"
+                                style="width: 1%;">
+                            </div>
+                        </div>
+
+                        <span class="percent">
+                            1%
+                        </span>
+
+                    </div>
+
+
+                    <div class="rating-row">
+
+                        <span>2 ★</span>
+
+                        <div class="bar">
+                            <div
+                                class="bar-fill"
+                                style="width: 0.5%;">
+                            </div>
+                        </div>
+
+                        <span class="percent">
+                            0.5%
+                        </span>
+
+                    </div>
+
+
+                    <div class="rating-row">
+
+                        <span>1 ★</span>
+
+                        <div class="bar">
+                            <div
+                                class="bar-fill"
+                                style="width: 0.5%;">
+                            </div>
+                        </div>
+
+                        <span class="percent">
+                            0.5%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- REVIEW CARDS -->
+
+            <div class="reviews-grid">
+
+
+                <div class="review-card">
+
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+
+                    <div class="patient">
+
+                        <img
+                            class="patient-img"
+                            src="https://randomuser.me/api/portraits/women/44.jpg"
+                            alt="Patient">
+
+                        <div class="patient-info">
+
+                            <h4>
+                                Priya Shah
+                            </h4>
+
+                            <small>
+                                Cardiology Patient
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        The doctors and nursing staff were very
+                        supportive and professional. The entire
+                        consultation process was smooth and
+                        comfortable.
+                    </p>
+
+                </div>
+
+
+
+                <div class="review-card">
+
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+
+                    <div class="patient">
+
+                        <img
+                            class="patient-img"
+                            src="https://randomuser.me/api/portraits/men/32.jpg"
+                            alt="Patient">
+
+                        <div class="patient-info">
+
+                            <h4>
+                                Rahul Patel
+                            </h4>
+
+                            <small>
+                                Orthopedics Patient
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        I was impressed by the cleanliness,
+                        modern facilities and friendly staff.
+                        My treatment experience was excellent.
+                    </p>
+
+                </div>
+
+
+
+                <div class="review-card">
+
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+
+                    <div class="patient">
+
+                        <img
+                            class="patient-img"
+                            src="https://randomuser.me/api/portraits/women/65.jpg"
+                            alt="Patient">
+
+                        <div class="patient-info">
+
+                            <h4>
+                                Aisha Khan
+                            </h4>
+
+                            <small>
+                                Pediatrics Patient
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        The pediatric department was excellent.
+                        The doctor explained everything patiently
+                        and made my child feel comfortable.
+                    </p>
+
+                </div>
+
+
+
+                <div class="review-card">
+
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+
+                    <div class="patient">
+
+                        <img
+                            class="patient-img"
+                            src="https://randomuser.me/api/portraits/men/46.jpg"
+                            alt="Patient">
+
+                        <div class="patient-info">
+
+                            <h4>
+                                Arjun Mehta
+                            </h4>
+
+                            <small>
+                                General Medicine
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="review-stars">
+                        ★★★★☆
+                    </div>
+
+                    <p>
+                        Booking an appointment was simple and
+                        the waiting time was reasonable. Staff
+                        members were polite and helpful.
+                    </p>
+
+                </div>
+
+
+
+                <div class="review-card">
+
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+
+                    <div class="patient">
+
+                        <img
+                            class="patient-img"
+                            src="https://randomuser.me/api/portraits/women/33.jpg"
+                            alt="Patient">
+
+                        <div class="patient-info">
+
+                            <h4>
+                                Neha Joshi
+                            </h4>
+
+                            <small>
+                                Dermatology Patient
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        The dermatologist listened carefully to
+                        my concerns and explained the treatment
+                        plan in a very simple way.
+                    </p>
+
+                </div>
+
+
+
+                <div class="review-card">
+
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+
+                    <div class="patient">
+
+                        <img
+                            class="patient-img"
+                            src="https://randomuser.me/api/portraits/men/68.jpg"
+                            alt="Patient">
+
+                        <div class="patient-info">
+
+                            <h4>
+                                Sameer Desai
+                            </h4>
+
+                            <small>
+                                Neurology Patient
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        Very professional medical team. The
+                        doctor explained my reports clearly and
+                        answered all my questions patiently.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WRITE REVIEW
+    ========================= -->
+
+    <section class="section review-form-section">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Share Your Experience
+                </span>
+
+                <h2>
+                    Write a Review
+                </h2>
+
+                <p>
+                    Tell us about your experience at
+                    HealthCare Hospital.
+                </p>
+
+            </div>
+
+
+            <div class="review-form-box">
+
+                <form id="reviewForm">
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="patientName">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                Your Name
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="patientName"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="patientEmail">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                Email Address
+
+                            </label>
+
+                            <input
+                                type="email"
+                                id="patientEmail"
+                                placeholder="example@gmail.com"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="department">
+
+                                <i class="fa-solid fa-hospital"></i>
+
+                                Department
+
+                            </label>
+
+                            <select
+                                id="department"
+                                required>
+
+                                <option value="">
+                                    Select Department
+                                </option>
+
+                                <option>
+                                    Cardiology
+                                </option>
+
+                                <option>
+                                    Neurology
+                                </option>
+
+                                <option>
+                                    Orthopedics
+                                </option>
+
+                                <option>
+                                    Pediatrics
+                                </option>
+
+                                <option>
+                                    Dermatology
+                                </option>
+
+                                <option>
+                                    General Medicine
+                                </option>
+
+                                <option>
+                                    Gynecology
+                                </option>
+
+                                <option>
+                                    ENT
+                                </option>
+
+                                <option>
+                                    Dentistry
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+
+                                <i class="fa-solid fa-star"></i>
+
+                                Your Rating
+
+                            </label>
+
+                            <div class="star-selector">
+
+                                <input
+                                    type="radio"
+                                    id="star5"
+                                    name="rating"
+                                    value="5">
+
+                                <label for="star5">
+                                    ★
+                                </label>
+
+
+                                <input
+                                    type="radio"
+                                    id="star4"
+                                    name="rating"
+                                    value="4">
+
+                                <label for="star4">
+                                    ★
+                                </label>
+
+
+                                <input
+                                    type="radio"
+                                    id="star3"
+                                    name="rating"
+                                    value="3">
+
+                                <label for="star3">
+                                    ★
+                                </label>
+
+
+                                <input
+                                    type="radio"
+                                    id="star2"
+                                    name="rating"
+                                    value="2">
+
+                                <label for="star2">
+                                    ★
+                                </label>
+
+
+                                <input
+                                    type="radio"
+                                    id="star1"
+                                    name="rating"
+                                    value="1">
+
+                                <label for="star1">
+                                    ★
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="reviewText">
+
+                            <i class="fa-solid fa-comment-dots"></i>
+
+                            Your Review
+
+                        </label>
+
+                        <textarea
+                            id="reviewText"
+                            placeholder="Write your experience here..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-review">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Submit Review
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SUCCESS POPUP
+    ========================= -->
+
+    <div
+        class="popup"
+        id="successPopup">
+
+        <div class="popup-card">
+
+            <div class="success-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <h2>
+                Review Submitted Successfully!
+            </h2>
+
+            <p>
+                Thank you for sharing your valuable
+                experience with HealthCare Hospital.
+            </p>
+
+            <button
+                class="close-popup"
+                id="closePopup">
+
+                <i class="fa-solid fa-check"></i>
+
+                Done
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 HealthCare Hospital.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navbar =
+            document.getElementById("navbar");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navbar.classList.toggle("show");
+
+            }
+        );
+
+
+        /* Close mobile menu after clicking link */
+
+        const navLinks =
+            document.querySelectorAll("#navbar a");
+
+
+        navLinks.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navbar.classList.remove("show");
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =========================
+           REVIEW FORM
+        ========================= */
+
+        const reviewForm =
+            document.getElementById("reviewForm");
+
+        const successPopup =
+            document.getElementById("successPopup");
+
+        const closePopup =
+            document.getElementById("closePopup");
+
+
+        reviewForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* Check rating */
+
+                const selectedRating =
+                    document.querySelector(
+                        'input[name="rating"]:checked'
+                    );
+
+
+                if (!selectedRating) {
+
+                    alert(
+                        "Please select a star rating."
+                    );
+
+                    return;
+
+                }
+
+
+                /* Get values */
+
+                const name =
+                    document
+                        .getElementById("patientName")
+                        .value
+                        .trim();
+
+                const email =
+                    document
+                        .getElementById("patientEmail")
+                        .value
+                        .trim();
+
+                const department =
+                    document
+                        .getElementById("department")
+                        .value;
+
+                const review =
+                    document
+                        .getElementById("reviewText")
+                        .value
+                        .trim();
+
+
+                /* Basic validation */
+
+                if (
+                    name === "" ||
+                    email === "" ||
+                    department === "" ||
+                    review === ""
+                ) {
+
+                    alert(
+                        "Please fill all required fields."
+                    );
+
+                    return;
+
+                }
+
+
+                /* Save review in browser */
+
+                const reviewData = {
+
+                    name: name,
+
+                    email: email,
+
+                    department: department,
+
+                    rating: selectedRating.value,
+
+                    review: review,
+
+                    date:
+                        new Date().toLocaleDateString(
+                            "en-IN"
+                        )
+
+                };
+
+
+                localStorage.setItem(
+                    "healthCareReview",
+                    JSON.stringify(reviewData)
+                );
+
+
+                /* Show popup */
+
+                successPopup.classList.add("show");
+
+
+                /* Reset form */
+
+                reviewForm.reset();
+
+            }
+        );
+
+
+
+        /* =========================
+           CLOSE POPUP
+        ========================= */
+
+        closePopup.addEventListener(
+            "click",
+            function () {
+
+                successPopup.classList.remove("show");
+
+            }
+        );
+
+
+        /* Click outside popup */
+
+        successPopup.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === successPopup
+                ) {
+
+                    successPopup.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ESC key */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    successPopup.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

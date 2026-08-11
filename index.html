@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealthCare Hospital | Advanced Medical Care</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Website CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= PRELOADER ================= -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>HealthCare</span>
+        </div>
+    </div>
+
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="container top-content">
+
+            <div class="top-left">
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    Emergency: +91 98765 43210
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@healthcarehospital.com
+                </span>
+            </div>
+
+            <div class="top-right">
+                <span>
+                    <i class="fa-solid fa-clock"></i>
+                    24/7 Emergency Service
+                </span>
+
+                <a href="appointment.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book Appointment
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="header" id="header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div class="logo-text">
+                    <strong>Health<span>Care</span></strong>
+                    <small>Multi-Specialist Hospital</small>
+                </div>
+            </a>
+
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <nav class="navbar" id="navbar">
+
+                <a href="index.html" class="nav-link active">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    <i class="fa-solid fa-hospital"></i> About
+                </a>
+
+                <a href="departments.html" class="nav-link">
+                    <i class="fa-solid fa-stethoscope"></i> Departments
+                </a>
+
+                <a href="doctors.html" class="nav-link">
+                    <i class="fa-solid fa-user-doctor"></i> Doctors
+                </a>
+
+                <a href="medicines.html" class="nav-link">
+                    <i class="fa-solid fa-pills"></i> Medicines
+                </a>
+
+                <a href="laboratory.html" class="nav-link">
+                    <i class="fa-solid fa-flask"></i> Laboratory
+                </a>
+
+                <a href="reviews.html" class="nav-link">
+                    <i class="fa-solid fa-star"></i> Reviews
+                </a>
+
+                <a href="appointment.html" class="appointment-btn">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book Appointment
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+
+            <div class="hero-text reveal">
+
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    Trusted Healthcare Since 2005
+                </div>
+
+                <h1>
+                    Your Health,
+                    <span>Our Priority.</span>
+                </h1>
+
+                <p>
+                    Welcome to HealthCare Hospital, where advanced medical
+                    technology meets compassionate care. Our experienced
+                    doctors and healthcare professionals are here for you
+                    24 hours a day, 7 days a week.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="appointment.html" class="btn btn-primary">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Book Appointment
+                    </a>
+
+                    <a href="doctors.html" class="btn btn-outline">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Meet Our Doctors
+                    </a>
+
+                </div>
+
+
+                <div class="hero-trust">
+
+                    <div class="trust-item">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <div>
+                            <strong>50K+</strong>
+                            <span>Happy Patients</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <div>
+                            <strong>150+</strong>
+                            <span>Expert Doctors</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-item">
+                        <i class="fa-solid fa-award"></i>
+                        <div>
+                            <strong>20+</strong>
+                            <span>Years Experience</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card reveal">
+
+                <div class="floating-icon icon-one">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div class="floating-icon icon-two">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+
+                <div class="hero-image-box">
+
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=85"
+                        alt="HealthCare Hospital">
+
+                    <div class="doctor-badge">
+
+                        <div class="doctor-icon">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+
+                        <div>
+                            <strong>Expert Care</strong>
+                            <small>Available 24/7</small>
+                        </div>
+
+                        <i class="fa-solid fa-circle-check verified"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= QUICK SERVICES ================= -->
+    <section class="quick-services">
+
+        <div class="container">
+
+            <div class="service-grid">
+
+                <a href="appointment.html" class="quick-card reveal">
+                    <div class="quick-icon blue">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div>
+                        <h3>Book Appointment</h3>
+                        <p>Schedule your doctor visit</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+
+                <a href="laboratory.html" class="quick-card reveal">
+                    <div class="quick-icon purple">
+                        <i class="fa-solid fa-flask-vial"></i>
+                    </div>
+                    <div>
+                        <h3>Laboratory Tests</h3>
+                        <p>Reliable diagnostic testing</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+
+                <a href="medicines.html" class="quick-card reveal">
+                    <div class="quick-icon green">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+                    <div>
+                        <h3>Hospital Pharmacy</h3>
+                        <p>Quality medicines available</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+
+                <a href="departments.html" class="quick-card reveal">
+                    <div class="quick-icon orange">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <div>
+                        <h3>Our Departments</h3>
+                        <p>Specialized medical services</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT PREVIEW ================= -->
+    <section class="about-preview section-padding">
+
+        <div class="container about-grid">
+
+            <div class="about-images reveal">
+
+                <div class="main-about-image">
+
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85"
+                        alt="Doctor caring for patient">
+
+                </div>
+
+                <div class="experience-card">
+
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+
+                    <div>
+                        <strong>20+</strong>
+                        <span>Years of Excellence</span>
+                    </div>
+
+                </div>
+
+                <div class="small-image">
+
+                    <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=500&q=80"
+                        alt="Healthcare professional">
+
+                </div>
+
+            </div>
+
+
+            <div class="about-content reveal">
+
+                <span class="section-tag">
+                    <i class="fa-solid fa-heart"></i>
+                    About HealthCare
+                </span>
+
+                <h2>
+                    Compassionate Care,
+                    <span>Advanced Medicine.</span>
+                </h2>
+
+                <p>
+                    HealthCare Hospital is a modern multi-specialist healthcare
+                    institution dedicated to providing high-quality medical
+                    services to patients and their families.
+                </p>
+
+                <p>
+                    Our hospital combines experienced medical professionals,
+                    advanced technology, modern infrastructure and patient-first
+                    care to create a safe and comfortable healthcare experience.
+                </p>
+
+
+                <div class="about-features">
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Advanced Medical Technology</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Experienced Medical Specialists</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>24/7 Emergency Services</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Patient-Centered Care</span>
+                    </div>
+
+                </div>
+
+
+                <a href="about.html" class="btn btn-primary">
+                    Learn More About Us
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DEPARTMENTS ================= -->
+    <section class="departments section-padding">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-tag">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    Medical Departments
+                </span>
+
+                <h2>Specialized Care Under One Roof</h2>
+
+                <p>
+                    Our dedicated departments provide comprehensive healthcare
+                    services using modern technology and expert medical care.
+                </p>
+
+            </div>
+
+
+            <div class="department-grid">
+
+                <div class="department-card reveal">
+                    <div class="dept-icon blue-bg">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3>Cardiology</h3>
+                    <p>Complete diagnosis and treatment for heart-related conditions.</p>
+                    <a href="departments.html">
+                        Explore Department <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+
+                <div class="department-card reveal">
+                    <div class="dept-icon pink-bg">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3>Neurology</h3>
+                    <p>Specialized care for brain, spine and nervous system disorders.</p>
+                    <a href="departments.html">
+                        Explore Department <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+
+                <div class="department-card reveal">
+                    <div class="dept-icon green-bg">
+                        <i class="fa-solid fa-baby"></i>
+                    </div>
+                    <h3>Pediatrics</h3>
+                    <p>Professional healthcare services specially designed for children.</p>
+                    <a href="departments.html">
+                        Explore Department <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+
+                <div class="department-card reveal">
+                    <div class="dept-icon orange-bg">
+                        <i class="fa-solid fa-bone"></i>
+                    </div>
+                    <h3>Orthopedics</h3>
+                    <p>Advanced treatment for bones, joints, muscles and injuries.</p>
+                    <a href="departments.html">
+                        Explore Department <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+
+                <div class="department-card reveal">
+                    <div class="dept-icon purple-bg">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3>Ophthalmology</h3>
+                    <p>Complete eye examinations, diagnosis and treatment services.</p>
+                    <a href="departments.html">
+                        Explore Department <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+
+                <div class="department-card reveal">
+                    <div class="dept-icon cyan-bg">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <h3>Dentistry</h3>
+                    <p>Modern dental care for healthy teeth and beautiful smiles.</p>
+                    <a href="departments.html">
+                        Explore Department <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="center-button reveal">
+                <a href="departments.html" class="btn btn-secondary">
+                    View All Departments
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+    <section class="stats-section">
+
+        <div class="container stats-grid">
+
+            <div class="stat-box reveal">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-user-group"></i>
+                </div>
+                <div>
+                    <h3><span class="counter" data-target="50000">0</span>+</h3>
+                    <p>Patients Treated</p>
+                </div>
+            </div>
+
+
+            <div class="stat-box reveal">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <div>
+                    <h3><span class="counter" data-target="150">0</span>+</h3>
+                    <p>Expert Doctors</p>
+                </div>
+            </div>
+
+
+            <div class="stat-box reveal">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-bed-pulse"></i>
+                </div>
+                <div>
+                    <h3><span class="counter" data-target="500">0</span>+</h3>
+                    <p>Hospital Beds</p>
+                </div>
+            </div>
+
+
+            <div class="stat-box reveal">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                    <h3><span class="counter" data-target="20">0</span>+</h3>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="why-us section-padding">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-tag">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    Why Choose HealthCare?
+                </span>
+
+                <h2>Healthcare You Can Trust</h2>
+
+                <p>
+                    We are committed to providing safe, reliable, accessible
+                    and compassionate healthcare services.
+                </p>
+
+            </div>
+
+
+            <div class="why-grid">
+
+                <div class="why-card reveal">
+                    <span class="number">01</span>
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <h3>Expert Doctors</h3>
+                    <p>Highly qualified specialists with years of medical experience.</p>
+                </div>
+
+
+                <div class="why-card reveal">
+                    <span class="number">02</span>
+                    <i class="fa-solid fa-microscope"></i>
+                    <h3>Modern Technology</h3>
+                    <p>Advanced diagnostic and treatment technology for better outcomes.</p>
+                </div>
+
+
+                <div class="why-card reveal">
+                    <span class="number">03</span>
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>24/7 Services</h3>
+                    <p>Emergency medical support is available around the clock.</p>
+                </div>
+
+
+                <div class="why-card reveal">
+                    <span class="number">04</span>
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <h3>Patient First</h3>
+                    <p>Your comfort, safety and satisfaction are our top priorities.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+    <section class="cta-section">
+
+        <div class="container cta-content reveal">
+
+            <div>
+                <span class="cta-small">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    Need Medical Assistance?
+                </span>
+
+                <h2>We're Here When You Need Us.</h2>
+
+                <p>
+                    Get professional medical assistance from our experienced
+                    healthcare team.
+                </p>
+            </div>
+
+
+            <div class="cta-buttons">
+
+                <a href="appointment.html" class="btn btn-white">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book Appointment
+                </a>
+
+                <a href="tel:+919876543210" class="btn btn-outline-white">
+                    <i class="fa-solid fa-phone"></i>
+                    Call Emergency
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-about">
+
+                <a href="index.html" class="footer-logo">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    Health<span>Care</span>
+                </a>
+
+                <p>
+                    Providing trusted, compassionate and advanced healthcare
+                    services for you and your family.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="departments.html">Departments</a>
+                <a href="doctors.html">Our Doctors</a>
+                <a href="reviews.html">Patient Reviews</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Our Services</h3>
+
+                <a href="medicines.html">Pharmacy</a>
+                <a href="laboratory.html">Laboratory</a>
+                <a href="appointment.html">Appointments</a>
+                <a href="departments.html">Emergency Care</a>
+                <a href="departments.html">Specialist Consultation</a>
+
+            </div>
+
+
+            <div class="footer-column contact-column">
+
+                <h3>Contact Us</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    HealthCare Hospital, Ahmedabad, Gujarat, India
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@healthcarehospital.com
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-clock"></i>
+                    Emergency: Open 24/7
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 HealthCare Hospital. All Rights Reserved.
+                </p>
+
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= SCROLL TOP ================= -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- ================= TOAST ================= -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <div>
+            <strong>Welcome to HealthCare!</strong>
+            <p>Your trusted healthcare partner.</p>
+        </div>
+
+        <button id="closeToast" aria-label="Close notification">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <!-- Website JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
